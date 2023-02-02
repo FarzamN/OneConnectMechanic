@@ -79,7 +79,6 @@ const OTP = ({navigation}) => {
         <Text
           style={{
             color: Color.placeholderTextColor,
-            fontFamily: 'Poppins-Medium',
             fontSize: scale(14),
             alignSelf: 'center',
             paddingTop: scale(8),

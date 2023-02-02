@@ -33,11 +33,13 @@ const Register = ({navigation}) => {
           />
         </View>
         <View style={styles.WorkBox}>
-          <Text style={styles.WelcomeText}>Create your account</Text>
-          <Text style={styles.LongText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor
-          </Text>
+          <View style={{paddingHorizontal: 20}}>
+            <Text style={styles.WelcomeText}>Create your account</Text>
+            <Text style={styles.LongText}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </Text>
+          </View>
           <CustomInput
             onFocus={() => {
               setIndex(0);
@@ -249,7 +251,6 @@ const Register = ({navigation}) => {
             <Text
               style={{
                 color: Color.placeholderTextColor,
-                fontFamily: 'Poppins-Medium',
                 fontSize: scale(12),
                 paddingTop: moderateScale(5),
               }}>
@@ -257,13 +258,13 @@ const Register = ({navigation}) => {
             </Text>
           </View>
           <CustomButton
+            // containerStyle={{width: '90%', marginTop: scale(10)}}
             onPress={() => navigation.navigate('otp')}
             title={'Register'}
           />
           <Text
             style={{
               color: Color.placeholderTextColor,
-              fontFamily: 'Poppins-Medium',
               fontSize: scale(12),
               alignSelf: 'center',
               paddingTop: scale(8),
@@ -271,6 +272,7 @@ const Register = ({navigation}) => {
             Already have an account?
           </Text>
           <CustomLoginButton
+            containerStyle={{width: '80%'}}
             onPress={() => navigation.navigate('login')}
             title={'Sign In'}
           />
@@ -299,7 +301,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
-    padding: moderateScale(20),
+    paddingVertical: moderateScale(10),
   },
   WelcomeText: {
     fontSize: scale(28),

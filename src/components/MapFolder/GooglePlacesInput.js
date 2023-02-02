@@ -1,7 +1,6 @@
-import React, {useState, forwardRef} from 'react';
+import React from 'react';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
-import {useController} from 'react-hook-form';
-import {View, Text, TextInput, StyleSheet, Image, Platform} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {Color} from '../../utils/Colors';
 import {scale} from 'react-native-size-matters';
 
@@ -34,25 +33,17 @@ const GooglePlacesInput = props => {
 
 const styles = StyleSheet.create({
   field: {
-    // borderWidth: 1,
-    // borderColor: Color.Main,
-    flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 10,
     paddingTop: scale(2),
   },
 
   image: {
-    // width: scale(28),
-    // height: scale(28),
     resizeMode: 'contain',
-    // marginHorizontal: scale(15),
   },
   input: {
-    // fontSize: moderateScale(16),
     color: 'black',
     fontWeight: '600',
-    // fontFamily: Font.Lato400,
     width: '100%',
     textInputContainer: {
       backgroundColor: 'black',

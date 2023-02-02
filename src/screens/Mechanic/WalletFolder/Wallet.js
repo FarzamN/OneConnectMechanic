@@ -162,7 +162,6 @@ const styles = StyleSheet.create({
     color: Color.White,
     fontSize: scale(18),
     fontWeight: '700',
-    fontFamily: 'Inter-Bold',
     textTransform: 'capitalize',
   },
   cardContainer: {
@@ -233,7 +232,6 @@ const styles = StyleSheet.create({
   Btnfont: {
     color: '#fff',
     fontSize: scale(15),
-    fontFamily: 'Inter-Bold',
   },
   History: {
     color: '#414D5B',

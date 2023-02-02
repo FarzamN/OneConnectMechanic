@@ -32,9 +32,8 @@ const Home = ({navigation}) => {
             <FontAwesome name="chevron-down" size={18} color={Color.White} />
           }
           closeicon={
-            <FontAwesome name="volume-down" size={18} color={Color.White} />
+            <FontAwesome name="chevron-up" size={18} color={Color.White} />
           }
-          dropdownShown={true}
           dropdownStyles={{backgroundColor: Color.Main, color: Color.White}}
           dropdownItemStyles={{backgroundColor: '#EFEFEF'}}
           boxStyles={{backgroundColor: Color.Main}}

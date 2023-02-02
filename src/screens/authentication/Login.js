@@ -126,7 +126,10 @@ const Login = ({navigation}) => {
           />
           <TouchableOpacity
             onPress={() => navigation.navigate('forgetpass')}
-            style={[styles.FPassCon, {marginTop: scale(10)}]}>
+            style={[
+              styles.FPassCon,
+              {marginTop: scale(10), marginRight: scale(10)},
+            ]}>
             <Text
               style={{
                 fontSize: scale(16),
@@ -142,7 +145,6 @@ const Login = ({navigation}) => {
             <Text
               style={{
                 color: Color.placeholderTextColor,
-                fontFamily: 'Poppins-Medium',
                 fontSize: scale(12),
                 alignSelf: 'center',
                 paddingTop: scale(8),
@@ -170,7 +172,6 @@ const Login = ({navigation}) => {
           <Text
             style={{
               color: Color.placeholderTextColor,
-              fontFamily: 'Poppins-Medium',
               fontSize: scale(12),
               alignSelf: 'center',
               paddingTop: scale(8),
@@ -182,7 +183,7 @@ const Login = ({navigation}) => {
             title={'Create an accout'}
           />
         </View>
-        <View style={{height: verticalScale(50)}}></View>
+        <View style={{height: verticalScale(20)}}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -206,7 +207,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
-    padding: moderateScale(20),
+    padding: moderateScale(15),
   },
   WelcomeText: {
     fontSize: scale(28),
@@ -226,8 +227,8 @@ const styles = StyleSheet.create({
     // marginTop: scale(5),
   },
   image: {
-    width: scale(30),
-    height: verticalScale(35),
+    width: scale(20),
+    height: verticalScale(25),
     left: scale(15),
   },
   googleContainer: {
@@ -239,13 +240,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: scale(10),
     marginTop: scale(15),
-    width: '100%',
+    width: '90%',
     borderRadius: 20,
   },
   SigningText: {
     color: 'black',
-    fontFamily: 'Poppins-Medium',
-    fontSize: scale(16),
+    fontSize: scale(14),
     textAlign: 'center',
     textAlignVertical: 'center',
     paddingHorizontal: scale(30),

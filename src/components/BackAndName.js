@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     color: Color.Black,
     fontSize: scale(18),
     fontWeight: '700',
-    fontFamily: 'Inter-Bold',
     textTransform: 'capitalize',
   },
 });

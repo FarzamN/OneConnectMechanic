@@ -1,17 +1,7 @@
-import React, {forwardRef, useState} from 'react';
-import {useController, useForm} from 'react-hook-form';
-import {
-  StyleSheet,
-  InputField,
-  TextInput,
-  View,
-  Image,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
-import Zocial from 'react-native-vector-icons/Zocial';
-import Fontisto from 'react-native-vector-icons/Fontisto';
+import React, {forwardRef} from 'react';
+import {useController} from 'react-hook-form';
+import {StyleSheet, TextInput, View} from 'react-native';
+import {scale} from 'react-native-size-matters';
 
 const CustomInput = forwardRef((props, ref) => {
   const {field} = useController({
@@ -48,6 +38,7 @@ const CustomInput = forwardRef((props, ref) => {
 
 const styles = StyleSheet.create({
   InputStyles: {
+    width: '100%',
     height: scale(40),
     borderRadius: 12,
     alignItems: 'center',

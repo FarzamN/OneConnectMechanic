@@ -80,7 +80,10 @@ const Location = ({navigation}) => {
             alignSelf: 'center',
             width: '100%',
           }}>
-          <BackWithMenu />
+          <BackWithMenu
+            onPress_back={() => navigation.navigate('notification')}
+            onPress={() => navigation.openDrawer()}
+          />
         </View>
         <View
           style={{

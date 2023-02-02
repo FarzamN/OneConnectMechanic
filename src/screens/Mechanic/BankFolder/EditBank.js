@@ -1,4 +1,4 @@
-import {StyleSheet, SafeAreaView} from 'react-native';
+import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import React from 'react';
 import CustomButton from '../../../components/CustomButton';
 import CustomVehiclesBox from '../../../components/CustomVehiclesBox';
@@ -8,31 +8,32 @@ import {moderateScale, scale} from 'react-native-size-matters';
 const EditBank = ({navigation}) => {
   return (
     <SafeAreaView style={styles.Container}>
-      <BackAndName onPress={() => navigation.goBack()} title="Edit Vehicles" />
+      <BackAndName onPress={() => navigation.goBack()} title="Edit Bank" />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <CustomVehiclesBox
+          New_Vehicle="Edit Bank"
+          LongText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
+        />
 
-      <CustomVehiclesBox
-        New_Vehicle="Edit Vehicle"
-        LongText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
-      />
-
-      <CustomButton
-        title="Save Bank"
-        textStyle={{fontSize: scale(16)}}
-        containerStyle={{
-          width: '85%',
-          paddingVertical: moderateScale(12),
-          marginTop: scale(10),
-        }}
-      />
-      <CustomButton
-        title="DELETE"
-        textStyle={{fontSize: scale(16)}}
-        containerStyle={{
-          width: '85%',
-          paddingVertical: moderateScale(12),
-          marginTop: scale(10),
-        }}
-      />
+        <CustomButton
+          title="Save Bank"
+          textStyle={{fontSize: scale(16)}}
+          containerStyle={{
+            width: '85%',
+            paddingVertical: moderateScale(12),
+            marginTop: scale(10),
+          }}
+        />
+        <CustomButton
+          title="DELETE"
+          textStyle={{fontSize: scale(16)}}
+          containerStyle={{
+            width: '85%',
+            paddingVertical: moderateScale(12),
+            marginTop: scale(10),
+          }}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

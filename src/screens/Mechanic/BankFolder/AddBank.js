@@ -1,4 +1,4 @@
-import {StyleSheet, Text, SafeAreaView} from 'react-native';
+import {StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import React from 'react';
 import BackAndName from '../../../components/BackAndName';
 import CustomVehiclesBox from '../../../components/CustomVehiclesBox';
@@ -9,19 +9,21 @@ const AddBank = ({navigation}) => {
   return (
     <SafeAreaView style={styles.Container}>
       <BackAndName onPress={() => navigation.goBack()} title="Add Bank" />
-      <CustomVehiclesBox
-        New_Vehicle="Add New Bank"
-        LongText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
-      />
-      <CustomButton
-        title="Add Bank"
-        textStyle={{fontSize: scale(16)}}
-        containerStyle={{
-          width: '85%',
-          paddingVertical: moderateScale(12),
-          marginTop: scale(10),
-        }}
-      />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <CustomVehiclesBox
+          New_Vehicle="Add New Bank"
+          LongText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
+        />
+        <CustomButton
+          title="Add Bank"
+          textStyle={{fontSize: scale(16)}}
+          containerStyle={{
+            width: '85%',
+            paddingVertical: moderateScale(12),
+            marginTop: scale(10),
+          }}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

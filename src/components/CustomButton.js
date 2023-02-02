@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
   font: {
     color: '#fff',
     fontSize: scale(15),
-    fontFamily: 'Inter-Bold',
     textTransform: 'uppercase',
   },
 });

@@ -45,8 +45,8 @@ const ForgetPass = ({navigation}) => {
       </Text>
       <CustomInput
         style={{
-          width: '99%',
-          height: verticalScale(65),
+          width: '90%',
+          height: verticalScale(50),
           borderWidth: 1,
           borderColor: Color.Main,
           borderRadius: 20,
@@ -79,7 +79,6 @@ const ForgetPass = ({navigation}) => {
         <Text
           style={{
             color: Color.placeholderTextColor,
-            fontFamily: 'Poppins-Medium',
             fontSize: scale(14),
             alignSelf: 'center',
             paddingTop: scale(8),
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   ImageBox: {
-    marginTop: scale(50),
+    marginTop: scale(100),
     justifyContent: 'center',
     alignItems: 'center',
   },

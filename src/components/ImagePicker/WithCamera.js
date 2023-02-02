@@ -215,7 +215,6 @@ const styles = StyleSheet.create({
     fontSize: scale(30),
     color: Color.black,
     fontWeight: '700',
-    fontFamily: 'Inter',
     width: '70%',
   },
   circle: {
