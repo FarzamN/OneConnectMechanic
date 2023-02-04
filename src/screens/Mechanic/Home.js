@@ -28,6 +28,7 @@ const Home = ({navigation}) => {
 
       <View style={styles.DropdownBox}>
         <SelectList
+          Placeholder="All Data"
           arrowicon={
             <FontAwesome name="chevron-down" size={18} color={Color.White} />
           }

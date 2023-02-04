@@ -6,6 +6,7 @@ import {
   View,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
@@ -248,14 +249,17 @@ const Register = ({navigation}) => {
               value={toggleCheckBox}
               onValueChange={newValue => setToggleCheckBox(newValue)}
             />
-            <Text
-              style={{
-                color: Color.placeholderTextColor,
-                fontSize: scale(12),
-                paddingTop: moderateScale(5),
-              }}>
-              Accepting all the Terms and Conditions.
-            </Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('termsandconditions')}>
+              <Text
+                style={{
+                  color: Color.placeholderTextColor,
+                  fontSize: scale(12),
+                  paddingTop: moderateScale(5),
+                }}>
+                Accepting all the Terms and Conditions.
+              </Text>
+            </TouchableOpacity>
           </View>
           <CustomButton
             // containerStyle={{width: '90%', marginTop: scale(10)}}

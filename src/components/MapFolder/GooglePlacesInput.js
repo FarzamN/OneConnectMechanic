@@ -33,9 +33,10 @@ const GooglePlacesInput = props => {
 
 const styles = StyleSheet.create({
   field: {
-    alignItems: 'center',
+    alignSelf: 'center',
     borderRadius: 10,
     paddingTop: scale(2),
+    width: '100%',
   },
 
   image: {

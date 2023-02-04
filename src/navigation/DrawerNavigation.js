@@ -35,6 +35,10 @@ export const DrawerNavigation = () => {
         drawerLabelStyle: {
           marginLeft: -15,
         },
+        drawerStyle: {
+          borderBottomRightRadius: 50,
+          borderTopRightRadius: 50,
+        },
       }}
       initialRouteName="home1"
       drawerContent={props => <DrawerContainer {...props} />}>

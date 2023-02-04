@@ -1,17 +1,19 @@
+import React, {useState} from 'react';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
   PermissionsAndroid,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
-import BackWithMenu from '../../../components/BackWithMenu';
 import {Marker} from 'react-native-maps';
 import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
+import {moderateScale, scale} from 'react-native-size-matters';
 import CustomButton from '../../../components/CustomButton';
 import GooglePlacesInput from '../../../components/MapFolder/GooglePlacesInput';
-import {scale} from 'react-native-size-matters';
+import BackWithMenu from '../../../components/BackWithMenu';
 
 const requestCameraPermission = async () => {
   try {
@@ -44,68 +46,66 @@ const Location = ({navigation}) => {
   });
   return (
     <SafeAreaView>
-      <View>
-        <MapView
-          onPress={requestCameraPermission}
-          style={styles.mapStyle}
-          showsUserLocation={false}
-          zoomEnabled={true}
-          // zoomControlEnabled={true}
-          provider={PROVIDER_GOOGLE}
-          initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}>
-          <Marker
-            coordinate={Pin}
-            draggable={true}
-            pinColor="red"
-            onDragStart={e => {
-              console.log('helo map', e.nativeEvent.coordinate);
-            }}
-            onDragEnd={e => {
-              setPin({
-                latitude: e.nativeEvent.coordinate.latitude,
-                longitude: e.nativeEvent.coordinate.longitude,
-              });
-              console.log('helo map');
-            }}></Marker>
-        </MapView>
-        <View
-          style={{
-            position: 'absolute',
-            top: 0,
-            alignSelf: 'center',
-            width: '100%',
-          }}>
-          <BackWithMenu
-            onPress_back={() => navigation.navigate('notification')}
-            onPress={() => navigation.openDrawer()}
-          />
-        </View>
-        <View
-          style={{
-            position: 'absolute',
-            top: scale(100),
-            alignSelf: 'center',
-            width: '80%',
-          }}>
-          <GooglePlacesInput placeholder="location" />
-        </View>
-        <View
-          style={{
-            position: 'absolute',
-            bottom: 20,
-            alignSelf: 'center',
-            width: '100%',
-          }}>
-          <CustomButton
-            onPress={() => navigation.navigate('progress')}
-            title="Reached"
-          />
-        </View>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          alignSelf: 'center',
+          width: '100%',
+        }}>
+        <BackWithMenu
+          onPress_back={() => navigation.navigate('notification')}
+          onPress={() => navigation.openDrawer()}
+        />
+        <GooglePlacesInput
+          style={styles.GooglePlacesInput}
+          placeholder="location"
+        />
+      </View>
+      <MapView
+        onPress={requestCameraPermission}
+        style={styles.mapStyle}
+        showsUserLocation={false}
+        zoomEnabled={true}
+        // zoomControlEnabled={true}
+        provider={PROVIDER_GOOGLE}
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}>
+        <Marker
+          coordinate={Pin}
+          draggable={true}
+          pinColor="red"
+          onDragStart={e => {
+            console.log('helo map', e.nativeEvent.coordinate);
+          }}
+          onDragEnd={e => {
+            setPin({
+              latitude: e.nativeEvent.coordinate.latitude,
+              longitude: e.nativeEvent.coordinate.longitude,
+            });
+            console.log('helo map');
+          }}></Marker>
+      </MapView>
+      <View
+        style={{
+          position: 'absolute',
+          bottom: scale(20),
+          alignSelf: 'center',
+          width: '100%',
+        }}>
+        <CustomButton
+          containerStyle={{
+            width: '90%',
+            paddingVertical: moderateScale(15),
+            marginVertical: scale(10),
+          }}
+          onPress={() => navigation.navigate('vehicalselection')}
+          title="next"
+        />
       </View>
     </SafeAreaView>
   );
@@ -122,6 +122,20 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     zIndex: -17,
+  },
+  GooglePlacesInput: {
+    marginHorizontal: scale(25),
+    marginTop: scale(20),
+    width: '80%',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  icon: {
+    marginHorizontal: 20,
+    alignSelf: 'flex-end',
   },
 });
 export default Location;
