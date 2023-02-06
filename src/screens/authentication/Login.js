@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
-    paddingHorizontal: moderateScale(15),
+    paddingHorizontal: moderateScale(10),
     paddingVertical: moderateScale(30)
   },
   WelcomeText: {
