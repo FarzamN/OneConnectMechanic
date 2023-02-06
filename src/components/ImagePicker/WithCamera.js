@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -14,14 +14,14 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import Modal from 'react-native-modal';
 import {
   launchCamera,
   launchImageLibrary,
   ImagePicker,
 } from 'react-native-image-picker';
-import {Color} from '../../utils/Colors';
+import { Color } from '../../utils/Colors';
 
 const WithCamera = () => {
   const [proimg, setproimg] = useState(true);
@@ -178,7 +178,7 @@ const WithCamera = () => {
           <Image
             resizeMode="cover"
             style={styles.circle}
-            source={{uri: saveimage}}
+            source={{ uri: saveimage }}
           />
         )}
       </TouchableOpacity>
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignSelf: 'center',
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: Color.Main,
   },
   ModalBtn: {
     flex: 1,

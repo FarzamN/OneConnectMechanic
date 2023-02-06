@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,20 +10,20 @@ import {
   Platform,
   KeyboardAvoidingView,
 } from 'react-native';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import InputFields from '../../components/InputFields';
-import {useForm} from 'react-hook-form';
-import {Color} from '../../utils/Colors';
+import { useForm } from 'react-hook-form';
+import { Color } from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [index, setIndex] = useState(99);
   const {
     control,
     handleSubmit,
-    formState: {errors, isValid},
-  } = useForm({mode: 'all'});
+    formState: { errors, isValid },
+  } = useForm({ mode: 'all' });
   return (
     <SafeAreaView style={styles.Container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -48,19 +48,19 @@ const Login = ({navigation}) => {
             InputContainerStyle={
               index === 0
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
             }
             control={control}
             IconName={'user'}
@@ -84,19 +84,19 @@ const Login = ({navigation}) => {
               InputContainerStyle={
                 index === 1
                   ? {
-                      borderTopWidth: 0,
-                      borderRightWidth: 0,
-                      borderLeftWidth: 0,
-                      borderBottomWidth: 1,
-                      borderBottomColor: Color.Main,
-                    }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                   : {
-                      borderTopWidth: 0,
-                      borderRightWidth: 0,
-                      borderLeftWidth: 0,
-                      borderBottomWidth: 1,
-                      borderBottomColor: Color.borderColor,
-                    }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
               }
               IconName={'lock'}
               control={control}
@@ -120,7 +120,7 @@ const Login = ({navigation}) => {
             />
           </KeyboardAvoidingView>
           <CustomButton
-            containerStyle={{width: '90%', marginTop: scale(10)}}
+            containerStyle={{ width: '90%', marginTop: scale(10) }}
             onPress={() => navigation.navigate('DrawerNavigation')}
             title={'Login'}
           />
@@ -128,7 +128,7 @@ const Login = ({navigation}) => {
             onPress={() => navigation.navigate('forgetpass')}
             style={[
               styles.FPassCon,
-              {marginTop: scale(10), marginRight: scale(10)},
+              { marginTop: scale(10), marginRight: scale(10) },
             ]}>
             <Text
               style={{
@@ -183,7 +183,7 @@ const Login = ({navigation}) => {
             title={'Create an accout'}
           />
         </View>
-        <View style={{height: verticalScale(30)}}></View>
+        <View style={{ height: verticalScale(30) }}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -207,7 +207,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
-    padding: moderateScale(15),
+    paddingHorizontal: moderateScale(15),
+    paddingVertical: moderateScale(30)
   },
   WelcomeText: {
     fontSize: scale(28),

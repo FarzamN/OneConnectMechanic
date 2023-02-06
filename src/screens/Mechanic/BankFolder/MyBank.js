@@ -8,10 +8,10 @@ import {
   TextInput,
 } from 'react-native';
 import React from 'react';
-import {Color} from '../../../utils/Colors';
+import { Color } from '../../../utils/Colors';
 import BackAndName from '../../../components/BackAndName';
 import CustomVehiclesBox from '../../../components/CustomVehiclesBox';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 const DATA = [
   {
@@ -51,14 +51,14 @@ const DATA = [
     Reg: 'Reg ID: 14285850',
   },
 ];
-const Item = ({item, onPress}) => (
+const Item = ({ item, onPress }) => (
   <View style={styles.mainBox}>
     <View
       style={{
         flexDirection: 'row',
         paddingVertical: moderateScale(30),
       }}>
-      <View style={{paddingHorizontal: moderateScale(20)}}>
+      <View style={{ paddingHorizontal: moderateScale(20) }}>
         <Text style={styles.TextOne}>{item.Name}</Text>
         <Text style={styles.TextOne}>{item.Car}</Text>
         <Text style={styles.TextThree}>{item.Reg}</Text>
@@ -80,8 +80,8 @@ const Item = ({item, onPress}) => (
     </TouchableOpacity>
   </View>
 );
-const MyBank = ({navigation}) => {
-  const renderItem = ({item}) => {
+const MyBank = ({ navigation }) => {
+  const renderItem = ({ item }) => {
     return <Item item={item} onPress={() => navigation.navigate('editbank')} />;
   };
   return (
@@ -97,12 +97,12 @@ const MyBank = ({navigation}) => {
         data={DATA}
         renderItem={renderItem}
         keyExtractor={item => item.id}
-        // extraData={selectedId}
+      // extraData={selectedId}
       />
       <View style={styles.AddBox}>
         <Text style={styles.Add}>Add Another Vehicle</Text>
         <View style={styles.row}>
-          <TextInput style={styles.input} placeholder="Registration ID..." />
+          <TextInput style={{ color: Color.Black }} placeholderTextColor={Color.placeholderTextColor} placeholder="Registration ID..." />
           <TouchableOpacity
             onPress={() => navigation.navigate('addbank')}
             style={styles.AddBtnBox}>
