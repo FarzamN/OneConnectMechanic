@@ -51,10 +51,8 @@ const Item = ({task, Date, price}) => (
             width: 20,
             height: 20,
             borderRadius: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingLeft: 6,
-            paddingTop: 5,
+            textAlign: 'center',
+            textAlignVertical: 'center',
           }}
           name={'dollar'}
           color={'#36C2CF'}

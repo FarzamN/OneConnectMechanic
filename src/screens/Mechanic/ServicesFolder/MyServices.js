@@ -91,16 +91,12 @@ const styles = StyleSheet.create({
     fontSize: scale(14),
   },
   ToAddCircle: {
-    height: verticalScale(50),
-    aspectRatio: 1 / 1,
-    borderWidth: 5,
-    borderColor: '#EB6162',
+    // borderWidth: 7,
+    // borderColor: '#EB6162',
     borderRadius: 100,
     position: 'absolute',
     right: 10,
     bottom: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 export default MyServices;

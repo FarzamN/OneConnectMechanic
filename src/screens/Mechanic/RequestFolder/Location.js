@@ -103,7 +103,7 @@ const Location = ({navigation}) => {
             paddingVertical: moderateScale(15),
             marginVertical: scale(10),
           }}
-          onPress={() => navigation.navigate('vehicalselection')}
+          onPress={() => navigation.navigate('progress')}
           title="next"
         />
       </View>

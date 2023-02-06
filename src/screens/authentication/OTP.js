@@ -69,19 +69,22 @@ const OTP = ({navigation}) => {
         onPress={() => navigation.navigate('login')}
         title={'Conform'}
       />
-      <View style={styles.ImageBox}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <Image
           style={styles.Image}
           source={require('../../assets/Images/mainlogo.png')}
         />
-      </View>
-      <View style={{marginTop: scale(50)}}>
         <Text
           style={{
             color: Color.placeholderTextColor,
             fontSize: scale(14),
-            alignSelf: 'center',
-            paddingTop: scale(8),
+            position: 'absolute',
+            bottom: 10,
           }}>
           Wait {time} more seconds to resend the OTP
         </Text>
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingVertical: moderateScale(50),
+    paddingTop: moderateScale(50),
     paddingHorizontal: moderateScale(20),
   },
   WelcomeText: {
@@ -123,7 +126,6 @@ const styles = StyleSheet.create({
   },
   ImageBox: {
     marginTop: scale(50),
-    justifyContent: 'center',
     alignItems: 'center',
   },
   Image: {

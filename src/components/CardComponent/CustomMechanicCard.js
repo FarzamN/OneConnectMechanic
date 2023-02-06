@@ -90,7 +90,7 @@ const Item = ({item, onPressMore}) => (
         },
       ]}
       onPress={onPressMore}>
-      <Text style={styles.btnText}>Book Now</Text>
+      <Text style={styles.btnText}>accept</Text>
     </TouchableOpacity>
   </View>
 );

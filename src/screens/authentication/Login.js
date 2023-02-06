@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     height: scale(100),
   },
   WorkBox: {
-    height: '80%',
+    height: '100%',
     backgroundColor: '#fff',
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
@@ -227,8 +227,8 @@ const styles = StyleSheet.create({
     // marginTop: scale(5),
   },
   image: {
-    width: scale(20),
-    height: verticalScale(25),
+    width: scale(25),
+    height: scale(25),
     left: scale(15),
   },
   googleContainer: {

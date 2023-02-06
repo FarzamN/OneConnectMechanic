@@ -20,7 +20,7 @@ const BusinessProfile = ({navigation}) => {
       <BackAndName
         onPress={() => navigation.goBack()}
         color={Color.Black}
-        title="Profile"
+        title="Business Profile"
       />
 
       <ImagePicker />

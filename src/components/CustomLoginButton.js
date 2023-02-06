@@ -23,10 +23,10 @@ export default CustomLoginButton;
 const styles = StyleSheet.create({
   containerStyle: {
     width: '90%',
-    paddingVertical: moderateScale(10),
+    paddingVertical: moderateScale(12),
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 50,
+    borderRadius: 40,
     marginTop: scale(15),
     alignSelf: 'center',
   },

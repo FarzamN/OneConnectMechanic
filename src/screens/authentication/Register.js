@@ -250,7 +250,7 @@ const Register = ({navigation}) => {
               onValueChange={newValue => setToggleCheckBox(newValue)}
             />
             <TouchableOpacity
-              onPress={() => navigation.navigate('termsandconditions')}>
+              onPress={() => navigation.navigate('termsandcondition')}>
               <Text
                 style={{
                   color: Color.placeholderTextColor,
