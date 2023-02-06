@@ -1,10 +1,16 @@
-import React from 'react';
-import {} from 'react-native';
-import AuthNavigation from './src/navigation/AuthNavigation';
-import {DrawerNavigation} from './src/navigation/DrawerNavigation';
+import React, {useEffect} from 'react'
+import {StyleSheet, Text, View} from 'react-native'
+import AuthNavigation from './src/navigation/AuthNavigation'
+import {DrawerNavigation} from './src/navigation/DrawerNavigation'
+import SplashScreen from 'react-native-splash-screen'
 
 const App = () => {
-  return <AuthNavigation />;
-};
+  useEffect(() => {
+    SplashScreen.hide()
+  }, [1000])
 
-export default App;
+  return <AuthNavigation />
+}
+
+const styles = StyleSheet.create({})
+export default App
