@@ -6,9 +6,7 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
 
 import android.os.Bundle; // here
-// react-native-splash-screen >= 0.3.1
 import org.devio.rn.splashscreen.SplashScreen; // here
-// react-native-splash-screen < 0.3.1
 
 public class MainActivity extends ReactActivity {
   @Override

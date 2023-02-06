@@ -112,12 +112,20 @@ const BusinessProfile = ({navigation}) => {
       <CustomButton
         onPress={() => navigation.navigate('myservices')}
         textStyle={{fontSize: scale(18)}}
-        containerStyle={{width: '85%', padding: moderateScale(15)}}
+        containerStyle={{
+          width: '85%',
+          padding: moderateScale(15),
+          marginTop: scale(10),
+        }}
         title="Add Services"
       />
       <CustomButton
         textStyle={{fontSize: scale(18)}}
-        containerStyle={{width: '85%', padding: moderateScale(15)}}
+        containerStyle={{
+          width: '85%',
+          padding: moderateScale(15),
+          marginTop: scale(7),
+        }}
         title="Save Changes"
       />
     </SafeAreaView>

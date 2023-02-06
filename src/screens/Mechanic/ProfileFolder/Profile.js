@@ -113,7 +113,11 @@ const Profile = ({navigation}) => {
         />
         <CustomButton
           textStyle={{fontSize: scale(18)}}
-          containerStyle={{width: '85%', padding: moderateScale(15)}}
+          containerStyle={{
+            width: '85%',
+            padding: moderateScale(15),
+            marginTop: scale(10),
+          }}
           title="Save Changes"
         />
       </ScrollView>

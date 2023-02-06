@@ -115,6 +115,7 @@ const ServiceDetail = () => {
             placeholderTextColor={'#32323266'}
           />
           <CustomLoginButton
+            onPress={() => setModalVisible(false)}
             textStyle={{fontSize: scale(13)}}
             containerStyle={{marginTop: scale(10), width: scale(150)}}
             title="Rating"
