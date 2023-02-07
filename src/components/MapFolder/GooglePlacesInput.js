@@ -9,10 +9,9 @@ const GooglePlacesInput = props => {
     <View style={[styles.field, props.style]}>
       {props.image ? <Image style={styles.image} source={props.image} /> : null}
       <GooglePlacesAutocomplete
-               textInputProps={{
+        textInputProps={{
           placeholderTextColor: Color.placeholderTextColor,
         }}
-        placeholderTextColor={'#2f2'}
         styles={{
           textInput: {
             height: 38,
@@ -20,8 +19,7 @@ const GooglePlacesInput = props => {
             fontSize: 16,
           },
           row: {
-            color: '#fff',
-
+            backgroundColor: '#fff',
           },
           description: {
             color: '#000',
@@ -31,8 +29,6 @@ const GooglePlacesInput = props => {
         multiline={props.multiline}
         numberOfLines={props.numberOfLines}
         placeholder={props.placeholder}
-        placeholderTextColor={Color.placeholderTextColor}
-       
         keyboardType={props.keyboardType}
         textAlignVertical={props.textAlignVertical}
         onPress={props.onPress}

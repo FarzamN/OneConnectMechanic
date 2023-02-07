@@ -1,4 +1,4 @@
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import CustomInput from '../../../components/CustomInput';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
@@ -16,46 +16,51 @@ const AddServices = ({navigation}) => {
   return (
     <SafeAreaView style={styles.Container}>
       <BackAndName onPress={() => navigation.goBack()} title="Add Services" />
-      <CustomInput
-        style={styles.CustomInputStyles}
-        control={control}
-        keyboardType="email-address"
-        name="forget_pass"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Name of the Service"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomInput
-        style={styles.CustomInputStyles}
-        control={control}
-        keyboardType="email-address"
-        name="forget_pass"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Base price of the Service"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomInput
-        style={[styles.CustomInputStyles, styles.BigOne]}
-        control={control}
-        keyboardType="email-address"
-        name="forget_pass"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Small Description"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomButton title="Save Services" />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <CustomInput
+          style={styles.CustomInputStyles}
+          control={control}
+          keyboardType="email-address"
+          name="forget_pass"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Name of the Service"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomInput
+          style={styles.CustomInputStyles}
+          control={control}
+          keyboardType="email-address"
+          name="forget_pass"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Base price of the Service"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomInput
+          style={[styles.CustomInputStyles, styles.BigOne]}
+          control={control}
+          keyboardType="email-address"
+          name="forget_pass"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Small Description"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomButton
+          containerStyle={{marginTop: scale(10)}}
+          title="Save Services"
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

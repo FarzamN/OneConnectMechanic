@@ -6,11 +6,11 @@ import {
   FlatList,
   TouchableOpacity,
   SafeAreaView,
+  Image,
 } from 'react-native';
 import BackAndName from '../../../components/BackAndName';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import {moderateScale, scale} from 'react-native-size-matters';
 import {Color} from '../../../utils/Colors';
-import Octicons from 'react-native-vector-icons/Octicons';
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -65,7 +65,10 @@ const MyServices = ({navigation}) => {
       <TouchableOpacity
         onPress={() => navigation.navigate('addservices')}
         style={styles.ToAddCircle}>
-        <Octicons size={50} name={'plus-circle'} color={Color.Main} />
+        <Image
+          style={{width: scale(40), height: scale(40)}}
+          source={require('../../../assets/Images/plus.png')}
+        />
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -91,12 +94,10 @@ const styles = StyleSheet.create({
     fontSize: scale(14),
   },
   ToAddCircle: {
-    // borderWidth: 7,
-    // borderColor: '#EB6162',
     borderRadius: 100,
     position: 'absolute',
-    right: 10,
-    bottom: 10,
+    right: 20,
+    bottom: 20,
   },
 });
 export default MyServices;
