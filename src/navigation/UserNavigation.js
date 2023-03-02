@@ -11,7 +11,7 @@ import EditService from '../screens/Mechanic/ServicesFolder/EditService';
 import Location from '../screens/Mechanic/RequestFolder/Location';
 import Progress from '../screens/Mechanic/RequestFolder/Progress';
 import Bill from '../screens/Mechanic/RequestFolder/Bill';
-import Summary from '../screens/Mechanic/SummaryFolder/Summary.js';
+import Summary from '../screens/Mechanic/SummaryFolder/Summary';
 import AddBank from '../screens/Mechanic/BankFolder/AddBank';
 import EditBank from '../screens/Mechanic/BankFolder/EditBank';
 import BankSelection from '../screens/Mechanic/BankFolder/BankSelection';

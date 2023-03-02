@@ -20,8 +20,8 @@ const EditBank = ({navigation}) => {
           textStyle={{fontSize: scale(16)}}
           containerStyle={{
             width: '85%',
-            paddingVertical: moderateScale(12),
-            marginTop: scale(10),
+            paddingVertical: moderateScale(15),
+            marginTop: scale(25),
           }}
         />
         <CustomButton
@@ -29,8 +29,8 @@ const EditBank = ({navigation}) => {
           textStyle={{fontSize: scale(16)}}
           containerStyle={{
             width: '85%',
-            paddingVertical: moderateScale(12),
-            marginTop: scale(10),
+            paddingVertical: moderateScale(15),
+            marginTop: scale(25),
           }}
         />
       </ScrollView>

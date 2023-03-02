@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     bottom: -25,
+    elevation: 5,
   },
   Image: {
     marginTop: scale(15),

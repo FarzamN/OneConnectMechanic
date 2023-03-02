@@ -1,7 +1,8 @@
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {StyleSheet, SafeAreaView} from 'react-native';
 import React from 'react';
 import BackAndName from '../../../components/BackAndName';
 import CustomMechanicCard from '../../../components/CardComponent/CustomMechanicCard';
+import {Color} from '../../../utils/Colors';
 
 const AvailableRequests = ({navigation}) => {
   return (
@@ -18,7 +19,7 @@ const AvailableRequests = ({navigation}) => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
   },
 });
 

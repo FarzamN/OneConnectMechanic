@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -14,14 +14,14 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import Modal from 'react-native-modal';
 import {
   launchCamera,
   launchImageLibrary,
   ImagePicker,
 } from 'react-native-image-picker';
-import { Color } from '../../utils/Colors';
+import {Color} from '../../utils/Colors';
 
 const WithCamera = () => {
   const [proimg, setproimg] = useState(true);
@@ -167,7 +167,7 @@ const WithCamera = () => {
         </View>
       </Modal>
 
-      <TouchableOpacity>
+      <View>
         {show ? (
           <Image
             resizeMode="cover"
@@ -178,10 +178,10 @@ const WithCamera = () => {
           <Image
             resizeMode="cover"
             style={styles.circle}
-            source={{ uri: saveimage }}
+            source={{uri: saveimage}}
           />
         )}
-      </TouchableOpacity>
+      </View>
       <TouchableOpacity
         style={{
           justifyContent: 'center',
@@ -224,8 +224,8 @@ const styles = StyleSheet.create({
     width: '70%',
   },
   circle: {
-    width: scale(120),
-    height: scale(120),
+    width: scale(150),
+    height: scale(150),
     backgroundColor: Color.White,
     borderRadius: 100,
     alignSelf: 'center',

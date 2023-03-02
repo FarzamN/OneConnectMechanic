@@ -19,10 +19,10 @@ function AuthNavigation() {
       <Stack.Navigator
         screenOptions={{headerShown: false}}
         initialRouteName="splash">
-        <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="splash" component={Splash} />
-        <Stack.Screen name="termsandcondition" component={TermsAndCondition} />
+        <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="register" component={Register} />
+        <Stack.Screen name="termsandcondition" component={TermsAndCondition} />
         <Stack.Screen name="otp" component={OTP} />
         <Stack.Screen name="forgetpass" component={ForgetPass} />
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />

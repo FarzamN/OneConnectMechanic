@@ -52,7 +52,7 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    color: '#32323266',
+    color: '#000',
     fontSize: 14,
     paddingHorizontal: 15,
   },

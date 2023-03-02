@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   myWalletText: {
     color: '#000',
     fontSize: scale(18),
-    fontWeight: '400',
+    fontWeight: '500',
     marginBottom: scale(20),
   },
   upperContainer: {
@@ -213,12 +213,13 @@ const styles = StyleSheet.create({
   },
   balanceText: {
     color: Color.Main,
-    fontSize: 22,
+    fontSize: scale(20),
     lineHeight: 25,
+    fontWeight: '600',
   },
   containerStyle: {
     alignSelf: 'center',
-    width: '70%',
+    width: '85%',
     padding: moderateScale(10),
     alignItems: 'center',
     justifyContent: 'center',

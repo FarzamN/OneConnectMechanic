@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,21 +7,21 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import { Color } from '../../utils/Colors';
+import {Color} from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import CustomInput from '../../components/CustomInput';
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 
-const ForgetPass = ({ navigation }) => {
+const ForgetPass = ({navigation}) => {
   const [time, setTime] = useState(30);
   const timerRef = useRef(time);
 
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({ mode: 'all' });
+    formState: {errors, isValid},
+  } = useForm({mode: 'all'});
 
   useEffect(() => {
     const timerId = setInterval(() => {
@@ -45,8 +45,8 @@ const ForgetPass = ({ navigation }) => {
       </Text>
       <CustomInput
         style={{
-          width: '90%',
-          height: verticalScale(50),
+          width: '100%',
+          height: verticalScale(55),
           borderWidth: 1,
           borderColor: Color.Main,
           borderRadius: 20,
@@ -66,6 +66,7 @@ const ForgetPass = ({ navigation }) => {
         placeholderTextColor={'#32323266'}
       />
       <CustomButton
+        containerStyle={{width: '100%', marginTop: scale(25)}}
         onPress={() => navigation.navigate('login')}
         title={'Verify'}
       />
@@ -75,11 +76,12 @@ const ForgetPass = ({ navigation }) => {
           source={require('../../assets/Images/mainlogo.png')}
         />
       </View>
-      <View style={{
-        position: 'absolute',
-        bottom: 10,
-        alignSelf: 'center'
-      }}>
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 10,
+          alignSelf: 'center',
+        }}>
         <Text
           style={{
             color: Color.placeholderTextColor,
@@ -112,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: scale(13),
     marginBottom: scale(5),
   },
-  codeFieldRoot: { marginVertical: scale(20) },
+  codeFieldRoot: {marginVertical: scale(20)},
   cell: {
     width: scale(60),
     height: scale(60),

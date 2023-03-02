@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,20 +10,20 @@ import {
   Platform,
   KeyboardAvoidingView,
 } from 'react-native';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import InputFields from '../../components/InputFields';
-import { useForm } from 'react-hook-form';
-import { Color } from '../../utils/Colors';
+import {useForm} from 'react-hook-form';
+import {Color} from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
 
-const Login = ({ navigation }) => {
+const Login = ({navigation}) => {
   const [index, setIndex] = useState(99);
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({ mode: 'all' });
+    formState: {errors, isValid},
+  } = useForm({mode: 'all'});
   return (
     <SafeAreaView style={styles.Container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -34,11 +34,13 @@ const Login = ({ navigation }) => {
           />
         </View>
         <View style={styles.WorkBox}>
-          <Text style={styles.WelcomeText}>Welcome back</Text>
-          <Text style={styles.LongText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor
-          </Text>
+          <View style={{paddingHorizontal: 20}}>
+            <Text style={styles.WelcomeText}>Welcome back</Text>
+            <Text style={styles.LongText}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </Text>
+          </View>
           {/* <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}> */}
           <InputFields
@@ -48,19 +50,19 @@ const Login = ({ navigation }) => {
             InputContainerStyle={
               index === 0
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             IconName={'user'}
@@ -84,19 +86,19 @@ const Login = ({ navigation }) => {
               InputContainerStyle={
                 index === 1
                   ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                      borderTopWidth: 0,
+                      borderRightWidth: 0,
+                      borderLeftWidth: 0,
+                      borderBottomWidth: 1,
+                      borderBottomColor: Color.Main,
+                    }
                   : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                      borderTopWidth: 0,
+                      borderRightWidth: 0,
+                      borderLeftWidth: 0,
+                      borderBottomWidth: 1,
+                      borderBottomColor: Color.borderColor,
+                    }
               }
               IconName={'lock'}
               control={control}
@@ -120,7 +122,7 @@ const Login = ({ navigation }) => {
             />
           </KeyboardAvoidingView>
           <CustomButton
-            containerStyle={{ width: '90%', marginTop: scale(10) }}
+            containerStyle={{width: '90%', marginTop: scale(10)}}
             onPress={() => navigation.navigate('DrawerNavigation')}
             title={'Login'}
           />
@@ -128,7 +130,7 @@ const Login = ({ navigation }) => {
             onPress={() => navigation.navigate('forgetpass')}
             style={[
               styles.FPassCon,
-              { marginTop: scale(10), marginRight: scale(10) },
+              {marginTop: scale(10), marginRight: scale(10)},
             ]}>
             <Text
               style={{
@@ -138,7 +140,7 @@ const Login = ({ navigation }) => {
                 fontStyle: 'normal',
                 textDecorationLine: 'underline',
               }}>
-              Forget Password?
+              Forgot Password?
             </Text>
           </TouchableOpacity>
           <View>
@@ -149,7 +151,7 @@ const Login = ({ navigation }) => {
                 alignSelf: 'center',
                 paddingTop: scale(8),
               }}>
-              Or SignIn with
+              Or Signin with
             </Text>
 
             <TouchableOpacity style={styles.googleContainer}>
@@ -157,7 +159,7 @@ const Login = ({ navigation }) => {
                 style={styles.image}
                 source={require('../../assets/Images/google.png')}
               />
-              <Text style={styles.SigningText}>Sign In With Google</Text>
+              <Text style={styles.SigningText}>Login With Google</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.googleContainer}>
@@ -165,7 +167,7 @@ const Login = ({ navigation }) => {
                 style={styles.image}
                 source={require('../../assets/Images/facebook.png')}
               />
-              <Text style={styles.SigningText}>Sign In With facebook</Text>
+              <Text style={styles.SigningText}>Login With facebook</Text>
             </TouchableOpacity>
           </View>
 
@@ -174,16 +176,17 @@ const Login = ({ navigation }) => {
               color: Color.placeholderTextColor,
               fontSize: scale(12),
               alignSelf: 'center',
-              paddingTop: scale(8),
+              paddingTop: scale(15),
             }}>
-            Don`t have an account
+            Don`t have an account?
           </Text>
           <CustomLoginButton
+            containerStyle={{marginTop: 0}}
             onPress={() => navigation.navigate('register')}
             title={'Create an accout'}
           />
         </View>
-        <View style={{ height: verticalScale(30) }}></View>
+        <View style={{height: verticalScale(30)}}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -203,12 +206,12 @@ const styles = StyleSheet.create({
     height: scale(100),
   },
   WorkBox: {
-    height: '100%',
-    backgroundColor: '#fff',
+    flex: 1,
+    backgroundColor: Color.White,
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
     paddingHorizontal: moderateScale(10),
-    paddingVertical: moderateScale(30)
+    paddingVertical: moderateScale(35),
   },
   WelcomeText: {
     fontSize: scale(28),

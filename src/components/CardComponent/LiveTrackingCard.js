@@ -20,14 +20,6 @@ const DATA = [
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Job Done',
   },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Reached',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-1457171e29d73',
-    title: 'Job Done',
-  },
 ];
 
 const LiveTrackingCard = () => {
@@ -46,7 +38,7 @@ const LiveTrackingCard = () => {
   );
   return (
     <FlatList
-      scrollEnabled={true}
+      scrollEnabled={false}
       showsVerticalScrollIndicator={false}
       data={DATA}
       renderItem={({item}) => <Item title={item.title} />}
@@ -59,7 +51,7 @@ export default LiveTrackingCard;
 
 const styles = StyleSheet.create({
   CardBox: {
-    backgroundColor: '#f4f4f4',
+    backgroundColor: Color.lightGrey,
     borderRadius: 20,
     marginHorizontal: scale(20),
     paddingHorizontal: moderateScale(20),
@@ -70,6 +62,7 @@ const styles = StyleSheet.create({
   Service: {
     fontSize: scale(17),
     color: Color.Black,
+    fontWeight: '600',
     lineHeight: 22,
   },
 

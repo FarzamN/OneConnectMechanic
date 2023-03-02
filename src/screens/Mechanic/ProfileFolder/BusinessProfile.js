@@ -114,8 +114,7 @@ const BusinessProfile = ({navigation}) => {
         textStyle={{fontSize: scale(18)}}
         containerStyle={{
           width: '85%',
-          padding: moderateScale(15),
-          marginTop: scale(10),
+          marginTop: scale(30),
         }}
         title="Add Services"
       />
@@ -123,8 +122,7 @@ const BusinessProfile = ({navigation}) => {
         textStyle={{fontSize: scale(18)}}
         containerStyle={{
           width: '85%',
-          padding: moderateScale(15),
-          marginTop: scale(7),
+          marginTop: scale(20),
         }}
         title="Save Changes"
       />

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import BackAndName from '../../../components/BackAndName';
 import ServiceDetail from '../../../components/CardComponent/ServiceDetail';
 import {Color} from '../../../utils/Colors';
@@ -30,8 +30,8 @@ const Bill = ({navigation}) => {
           </View>
         </View>
         <Text style={styles.CustomerID}>Customer ID Number : 1234567</Text>
-        <ServiceDetail />
-        <View style={{height: 10}}></View>
+        <ServiceDetail ChangeText="Service Charges" ChangeBox={true} />
+        <View style={{height: 10}} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -45,16 +45,27 @@ const styles = StyleSheet.create({
 
   CardContainer: {
     backgroundColor: '#F0F0F0',
-    paddingVertical: moderateScale(25),
+    paddingTop: moderateScale(25),
+    paddingBottom: verticalScale(10),
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderBottomColor: Color.Main,
     borderTopColor: Color.Main,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   Service: {
     textAlign: 'center',
     color: Color.Black,
     fontSize: scale(20),
+    fontWeight: '700',
   },
   Price: {
     textAlign: 'center',
@@ -66,10 +77,12 @@ const styles = StyleSheet.create({
   Num: {
     color: Color.Main,
     fontSize: scale(17),
+    fontWeight: '700',
   },
   Text: {
     color: Color.Black,
     fontSize: scale(17),
+    fontWeight: '700',
   },
   DateBox: {
     flexDirection: 'row',
@@ -78,7 +91,7 @@ const styles = StyleSheet.create({
   },
   CustomerID: {
     color: Color.Black,
-    fontWeight: '600',
+    fontWeight: '700',
     fontSize: scale(18),
     marginTop: scale(20),
     textAlign: 'center',

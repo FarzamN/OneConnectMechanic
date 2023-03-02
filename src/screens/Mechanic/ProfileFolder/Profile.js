@@ -115,8 +115,7 @@ const Profile = ({navigation}) => {
           textStyle={{fontSize: scale(18)}}
           containerStyle={{
             width: '85%',
-            padding: moderateScale(15),
-            marginTop: scale(10),
+            marginTop: scale(25),
           }}
           title="Save Changes"
         />

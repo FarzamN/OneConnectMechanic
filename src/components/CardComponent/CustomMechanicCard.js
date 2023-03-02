@@ -84,7 +84,7 @@ const Item = ({item, onPressMore}) => (
       style={[
         {
           width: '100%',
-          borderRightWidth: 1,
+          // borderRightWidth: 1,
           borderRightColor: Color.borderColor,
           backgroundColor: Color.Main,
         },
@@ -139,8 +139,8 @@ const CustomMechanicCard = () => {
 
 const styles = StyleSheet.create({
   mainBox: {
-    borderWidth: 1,
-    borderColor: Color.borderColor,
+    backgroundColor: Color.White,
+    elevation: 5,
     marginVertical: scale(8),
     width: '90%',
     alignSelf: 'center',

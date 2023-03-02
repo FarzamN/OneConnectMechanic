@@ -13,7 +13,6 @@ import BackAndName from '../../../components/BackAndName';
 import LiveTrackingCard from '../../../components/CardComponent/LiveTrackingCard';
 import CustomButton from '../../../components/CustomButton';
 import CustomModal from '../../../components/CustomModal';
-import CustomStarRating from '../../../components/CustomStarRating';
 import {Color} from '../../../utils/Colors';
 
 const Progress = ({navigation}) => {
@@ -52,13 +51,14 @@ const Progress = ({navigation}) => {
           setShowModal(toggleModal());
           console.log('modal Open');
         }}
-        containerStyle={{marginBottom: scale(20)}}
-        title="Completed"
+        containerStyle={{marginBottom: scale(20), width: '90%'}}
+        title="Complete"
       />
       {showModal == false ? (
         <CustomModal
           ExCharges={true}
-          ExChargesText="Service Carges"
+          ExChargesText="Service Charges"
+          price="20$"
           onPress={() => navigation.navigate('bill')}
           Modal_Text="Add Details"
           placeholder="Add extra Charges"

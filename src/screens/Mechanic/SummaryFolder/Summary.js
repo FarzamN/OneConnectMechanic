@@ -1,12 +1,13 @@
 import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
 import React from 'react';
 import BackAndName from '../../../components/BackAndName';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {Color} from '../../../utils/Colors';
 import ServiceDetail from '../../../components/CardComponent/ServiceDetail';
 import CustomStarRating from '../../../components/CustomStarRating';
 import CustomInput from '../../../components/CustomInput';
 import {useForm} from 'react-hook-form';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const Summary = ({navigation}) => {
   const {
@@ -27,7 +28,7 @@ const Summary = ({navigation}) => {
               <Text style={styles.Num}></Text>
             </View>
             <View style={{flexDirection: 'row'}}>
-              <Text style={styles.Text}>Date :</Text>
+              <Text style={styles.Text}>Date: </Text>
               <Text style={styles.Num}>2022-1-09</Text>
             </View>
           </View>
@@ -61,30 +62,12 @@ const Summary = ({navigation}) => {
             styles.CustomerID,
             {textAlign: 'left', marginLeft: scale(10)},
           ]}>
-          Customer ID Number : 1234567
+          Feedback from Customer
         </Text>
         <View style={styles.StarBox}>
           <CustomStarRating starSize={30} />
         </View>
-        <CustomInput
-          style={{
-            borderTopWidth: 0,
-            borderRightWidth: 0,
-            borderLeftWidth: 0,
-            borderBottomWidth: 1,
-            borderBottomColor: Color.Main,
-          }}
-          control={control}
-          keyboardType="email-address"
-          name="your_comment"
-          rules={{
-            required: 'email is required',
-            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Enter a valid email',
-          }}
-          placeholder="His/Her Comment"
-          placeholderTextColor={'#32323266'}
-        />
+        <Text style={styles.Comment}>His/Her Comment</Text>
       </ScrollView>
     </SafeAreaView>
   );
@@ -102,11 +85,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: Color.Main,
     borderTopColor: Color.Main,
+    elevation: 5,
   },
   Service: {
     textAlign: 'center',
     color: Color.Black,
     fontSize: scale(18),
+    fontWeight: '700',
   },
   Price: {
     textAlign: 'center',
@@ -170,6 +155,12 @@ const styles = StyleSheet.create({
     width: '50%',
     alignSelf: 'center',
     marginTop: scale(10),
+  },
+  Comment: {
+    paddingHorizontal: moderateScale(20),
+    fontSize: scale(15),
+    marginTop: verticalScale(20),
+    color: Color.greyfont,
   },
 });
 

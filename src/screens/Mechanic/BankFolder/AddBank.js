@@ -18,9 +18,9 @@ const AddBank = ({navigation}) => {
           title="Add Bank"
           textStyle={{fontSize: scale(16)}}
           containerStyle={{
-            width: '85%',
-            paddingVertical: moderateScale(12),
-            marginTop: scale(10),
+            width: '90%',
+            paddingVertical: moderateScale(15),
+            marginTop: scale(25),
           }}
         />
       </ScrollView>

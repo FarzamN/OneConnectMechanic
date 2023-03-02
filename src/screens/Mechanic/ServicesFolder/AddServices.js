@@ -21,7 +21,7 @@ const AddServices = ({navigation}) => {
           style={styles.CustomInputStyles}
           control={control}
           keyboardType="email-address"
-          name="forget_pass"
+          name="name_of_the_service"
           rules={{
             required: 'email is required',
             value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -34,7 +34,7 @@ const AddServices = ({navigation}) => {
           style={styles.CustomInputStyles}
           control={control}
           keyboardType="email-address"
-          name="forget_pass"
+          name="base_price_of_the_service"
           rules={{
             required: 'email is required',
             value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -44,10 +44,11 @@ const AddServices = ({navigation}) => {
           placeholderTextColor={'#32323266'}
         />
         <CustomInput
+          multiline={true}
           style={[styles.CustomInputStyles, styles.BigOne]}
           control={control}
           keyboardType="email-address"
-          name="forget_pass"
+          name="small_description"
           rules={{
             required: 'email is required',
             value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -57,7 +58,7 @@ const AddServices = ({navigation}) => {
           placeholderTextColor={'#32323266'}
         />
         <CustomButton
-          containerStyle={{marginTop: scale(10)}}
+          containerStyle={{marginTop: scale(25), width: '85%'}}
           title="Save Services"
         />
       </ScrollView>
@@ -68,10 +69,10 @@ const AddServices = ({navigation}) => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
   },
   CustomInputStyles: {
-    width: '80%',
+    width: '85%',
     height: verticalScale(50),
     borderWidth: 1,
     borderColor: Color.Main,

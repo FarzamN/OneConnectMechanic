@@ -43,7 +43,7 @@ const OTP = ({navigation}) => {
   }, []);
   return (
     <SafeAreaView style={styles.Container}>
-      <Text style={styles.WelcomeText}>Create your account</Text>
+      <Text style={styles.WelcomeText}>Enter your OTP</Text>
       <Text style={styles.LongText}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor
@@ -66,25 +66,22 @@ const OTP = ({navigation}) => {
         )}
       />
       <CustomButton
+        containerStyle={{width: '100%', marginTop: 20}}
         onPress={() => navigation.navigate('login')}
-        title={'Conform'}
+        title={'Confirm'}
       />
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+      <View style={styles.ImageBox}>
         <Image
           style={styles.Image}
           source={require('../../assets/Images/mainlogo.png')}
         />
+      </View>
+      <View style={{position: 'absolute', bottom: 10, alignSelf: 'center'}}>
         <Text
           style={{
             color: Color.placeholderTextColor,
             fontSize: scale(14),
-            position: 'absolute',
-            bottom: 10,
+            alignSelf: 'center',
           }}>
           Wait {time} more seconds to resend the OTP
         </Text>
@@ -96,14 +93,14 @@ const OTP = ({navigation}) => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
     paddingTop: moderateScale(50),
     paddingHorizontal: moderateScale(20),
   },
   WelcomeText: {
     fontSize: scale(28),
     fontWeight: '700',
-    color: '#000',
+    color: Color.Black,
     marginBottom: scale(5),
   },
   LongText: {
@@ -114,8 +111,8 @@ const styles = StyleSheet.create({
   },
   codeFieldRoot: {marginVertical: scale(20)},
   cell: {
-    width: scale(60),
-    height: scale(60),
+    width: scale(65),
+    height: scale(65),
     fontSize: scale(24),
     borderWidth: 2,
     borderRadius: 10,
@@ -125,12 +122,13 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   ImageBox: {
-    marginTop: scale(50),
+    marginTop: '30%',
     alignItems: 'center',
   },
   Image: {
     width: scale(220),
     height: scale(170),
+    resizeMode: 'contain',
   },
 });
 

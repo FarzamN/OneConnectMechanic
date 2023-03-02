@@ -104,7 +104,7 @@ const Location = ({navigation}) => {
             marginVertical: scale(10),
           }}
           onPress={() => navigation.navigate('progress')}
-          title="next"
+          title="Reached"
         />
       </View>
     </SafeAreaView>

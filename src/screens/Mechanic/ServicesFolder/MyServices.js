@@ -14,39 +14,27 @@ import {Color} from '../../../utils/Colors';
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Money Recieved.',
-    type: 'Description',
-    Timing: '07/07/2022',
+    title: 'Battery service.',
+    type: 'Base Price :  30$',
+    Description: 'Description',
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Pending Service.',
-    type: 'Description',
-    Timing: '07/07/2022',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Service Completed.',
-    type: 'Description',
-    Timing: '07/07/2022',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-1457171e29d73',
-    title: 'Service incompleted.',
-    type: 'Description',
-    Timing: '07/07/2022',
+    title: 'Battery service.',
+    type: 'Base Price :  30$',
+    Description: 'Description',
   },
 ];
 
 const MyServices = ({navigation}) => {
-  const Item = ({title, Timing, type}) => (
+  const Item = ({title, Description, type}) => (
     <TouchableOpacity
       onPress={() => navigation.navigate('editservice')}
       style={styles.CardBox}>
       <View style={{width: '80%'}}>
         <Text style={styles.Timing}>{title}</Text>
         <Text style={styles.Timing}>{type}</Text>
-        <Text style={styles.Timing}>{Timing}</Text>
+        <Text style={styles.Timing}>{Description}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -58,7 +46,11 @@ const MyServices = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         data={DATA}
         renderItem={({item}) => (
-          <Item title={item.title} Timing={item.Timing} type={item.type} />
+          <Item
+            title={item.title}
+            Description={item.Description}
+            type={item.type}
+          />
         )}
         keyExtractor={item => item.id}
       />
@@ -66,7 +58,7 @@ const MyServices = ({navigation}) => {
         onPress={() => navigation.navigate('addservices')}
         style={styles.ToAddCircle}>
         <Image
-          style={{width: scale(40), height: scale(40)}}
+          style={{width: scale(70), height: scale(70)}}
           source={require('../../../assets/Images/plus.png')}
         />
       </TouchableOpacity>
@@ -77,10 +69,10 @@ const MyServices = ({navigation}) => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
   },
   CardBox: {
-    backgroundColor: '#f4f4f4',
+    backgroundColor: Color.lightGrey,
     borderRadius: 20,
     width: '85%',
     alignSelf: 'center',

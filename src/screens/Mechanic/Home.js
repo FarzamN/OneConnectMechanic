@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
 import {SelectList} from 'react-native-dropdown-select-list';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import LinearGradient from 'react-native-linear-gradient';
 import BackWithMenu from '../../components/BackWithMenu';
 import {Color} from '../../utils/Colors';
@@ -35,9 +35,21 @@ const Home = ({navigation}) => {
           closeicon={
             <FontAwesome name="chevron-up" size={18} color={Color.White} />
           }
-          dropdownStyles={{backgroundColor: Color.Main, color: Color.White}}
+          dropdownStyles={{backgroundColor: Color.Main}}
           dropdownItemStyles={{backgroundColor: '#EFEFEF'}}
-          boxStyles={{backgroundColor: Color.Main}}
+          boxStyles={{
+            backgroundColor: Color.Main,
+            borderWidth: 0,
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+
+            elevation: 5,
+          }}
           dropdownTextStyles={{color: Color.Black}}
           inputStyles={{color: Color.White, fontSize: scale(15)}}
           search={false}
@@ -71,6 +83,7 @@ const Home = ({navigation}) => {
           <Text style={styles.Text}>Total Earned Amount</Text>
           <Text style={styles.Number}>900$</Text>
         </LinearGradient>
+        <View style={{height: verticalScale(10)}} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -93,7 +106,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    paddingVertical: moderateScale(10),
+    paddingVertical: moderateScale(20),
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   Text: {
     fontSize: scale(20),

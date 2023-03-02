@@ -9,7 +9,7 @@ import Modal from 'react-native-modal';
 
 import CustomStarRating from '../CustomStarRating';
 import CustomLoginButton from '../CustomLoginButton';
-const ServiceDetail = () => {
+const ServiceDetail = props => {
   const [isModalVisible, setModalVisible] = useState(false);
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
@@ -31,40 +31,52 @@ const ServiceDetail = () => {
         <Text style={styles.Text}>MS 3987, USA</Text>
       </View>
       <View style={styles.DateBox}>
-        <Text style={styles.Text}>Subtotal </Text>
+        <Text style={styles.Text}>{props.ChangeText} </Text>
         <Text style={styles.Text}>$29.89</Text>
       </View>
+      {props.ChangeBox ? (
+        <View style={styles.DateBox}>
+          <Text style={styles.Text}>Extra Charges</Text>
+          <Text style={styles.Text}>$25.00</Text>
+        </View>
+      ) : null}
       <View style={styles.DateBox}>
         <Text style={styles.Text}>Fee </Text>
         <Text style={styles.Text}>$2.00</Text>
       </View>
+
       <View style={styles.BottomBorder}></View>
       <View style={styles.DateBox}>
         <Text style={styles.Total}>Total</Text>
         <Text style={styles.Total}>$30.98</Text>
       </View>
-      <View style={styles.BottomEndBorder}></View>
-      <CustomInput
-        style={{
-          width: '90%',
-          height: verticalScale(45),
-          borderWidth: 1,
-          borderColor: Color.Main,
-          borderRadius: 20,
-          marginTop: scale(20),
-          paddingHorizontal: moderateScale(15),
-        }}
-        control={control}
-        keyboardType="email-address"
-        name="forget_pass"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Enter the tip"
-        placeholderTextColor={'#32323266'}
-      />
+      {props.Tip ? (
+        <>
+          <View style={styles.BottomEndBorder} />
+          <CustomInput
+            style={{
+              width: '90%',
+              height: verticalScale(45),
+              borderWidth: 1,
+              borderColor: Color.Main,
+              borderRadius: 20,
+              marginTop: scale(20),
+              paddingHorizontal: moderateScale(15),
+            }}
+            control={control}
+            keyboardType="email-address"
+            name="forget_pass"
+            rules={{
+              required: 'email is required',
+              value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+              message: 'Enter a valid email',
+            }}
+            placeholder="Enter the tip"
+            placeholderTextColor={'#32323266'}
+          />
+        </>
+      ) : null}
+
       <CustomButton
         onPress={() => {
           toggleModal();
@@ -117,7 +129,12 @@ const ServiceDetail = () => {
           <CustomLoginButton
             onPress={() => setModalVisible(false)}
             textStyle={{fontSize: scale(13)}}
-            containerStyle={{marginTop: scale(10), width: scale(150)}}
+            containerStyle={{
+              marginTop: scale(10),
+              width: '60%',
+              paddingVertical: moderateScale(15),
+              borderRadius: 20,
+            }}
             title="Rating"
           />
         </View>
@@ -140,7 +157,7 @@ const styles = StyleSheet.create({
   Details: {
     color: Color.Black,
     fontWeight: '700',
-    fontSize: scale(22),
+    fontSize: scale(18),
     marginLeft: scale(20),
     marginVertical: scale(20),
   },
@@ -174,8 +191,6 @@ const styles = StyleSheet.create({
     backgroundColor: Color.White,
     marginTop: scale(20),
     borderRadius: 20,
-    // paddingTop: verticalScale(15),
-    alignItems: 'center',
     paddingVertical: moderateScale(50),
     paddingHorizontal: moderateScale(30),
   },
@@ -185,9 +200,9 @@ const styles = StyleSheet.create({
     paddingTop: verticalScale(10),
   },
   FeedBack: {
-    fontSize: scale(22),
+    fontSize: scale(27),
     color: Color.Main,
-    fontWeight: '700',
+    fontWeight: '900',
     textAlign: 'center',
   },
 });

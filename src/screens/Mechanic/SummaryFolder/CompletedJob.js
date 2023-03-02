@@ -15,31 +15,36 @@ const CompletedJob = ({navigation}) => {
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'Battery service mechanic accepted',
-      Timing: '03:04:20',
+      title: 'Battery service ',
+      type: 'Vehicle Type : Car ',
+      Timing: 'Date: 2022-05-02',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Battery service mechanic started the trip to your location.',
-      Timing: '03:05:20',
+      title: 'Battery service ',
+      type: 'Vehicle Type : Car ',
+      Timing: 'Date: 2022-05-02',
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Battery service mechanic started the job.',
-      Timing: '03:10:10',
+      title: 'Battery service.',
+      type: 'Vehicle Type : Car ',
+      Timing: 'Date: 2022-05-02',
     },
     {
       id: '58694a0f-3da1-471f-bd96-1457171e29d73',
-      title: 'Battery service mechanic started the job.',
-      Timing: '03:15:10',
+      title: 'Battery service.',
+      type: 'Vehicle Type : Car ',
+      Timing: 'Date: 2022-05-02',
     },
   ];
-  const Item = ({title, Timing}) => (
+  const Item = ({title, Timing, type}) => (
     <TouchableOpacity
       onPress={() => navigation.navigate('summary')}
       style={styles.CardBox}>
       <View style={{width: '80%'}}>
         <Text style={styles.Service}>{title}</Text>
+        <Text style={[styles.Service, {marginVertical: 5}]}>{type}</Text>
         <Text style={styles.Timing}>{Timing}</Text>
       </View>
     </TouchableOpacity>
@@ -52,7 +57,7 @@ const CompletedJob = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         data={DATA}
         renderItem={({item}) => (
-          <Item title={item.title} Timing={item.Timing} />
+          <Item title={item.title} Timing={item.Timing} type={item.type} />
         )}
         keyExtractor={item => item.id}
       />

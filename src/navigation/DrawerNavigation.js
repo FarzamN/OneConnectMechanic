@@ -17,7 +17,7 @@ import Profile from '../screens/Mechanic/ProfileFolder/Profile';
 import BusinessProfile from '../screens/Mechanic/ProfileFolder/BusinessProfile';
 import AvailableRequests from '../screens/Mechanic/RequestFolder/AvailableRequests';
 
-import CompletedJob from '../screens/Mechanic/SummaryFolder/CompletedJob.js';
+import CompletedJob from '../screens/Mechanic/SummaryFolder/CompletedJob';
 import MyBank from '../screens/Mechanic/BankFolder/MyBank';
 
 import Wallet from '../screens/Mechanic/WalletFolder/Wallet.js';

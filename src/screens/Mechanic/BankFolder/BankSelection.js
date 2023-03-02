@@ -88,7 +88,12 @@ const BankSelection = ({navigation}) => {
     setModalVisible(!isModalVisible);
   };
   const renderItem = ({item}) => {
-    return <Item item={item} onPress={() => navigation.navigate('editbank')} />;
+    return (
+      <Item
+        item={item}
+        // onPress={() => navigation.navigate('editbank')}
+      />
+    );
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -110,7 +115,11 @@ const BankSelection = ({navigation}) => {
           console.log('modal Open');
         }}
         title={'NEXt'}
-        containerStyle={{marginBottom: scale(10)}}
+        containerStyle={{
+          marginBottom: scale(10),
+          paddingVertical: moderateScale(15),
+          width: '80%',
+        }}
       />
       {showModal == false ? (
         <CustomModal
@@ -175,12 +184,12 @@ const styles = StyleSheet.create({
     color: Color.placeholderTextColor,
   },
   mainBox: {
-    borderWidth: 1,
-    borderColor: Color.borderColor,
+    elevation: 7,
     marginVertical: scale(8),
     width: '90%',
     alignSelf: 'center',
     borderRadius: 15,
+    backgroundColor: Color.White,
   },
   userImg: {
     width: scale(100),
